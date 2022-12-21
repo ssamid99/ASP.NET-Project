@@ -1,10 +1,17 @@
-﻿using MediatR;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using iTextSharp.tool.xml;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MyResume.Domain.AppCode.Extensions;
 using MyResume.Domain.Business.AboutModule;
 using MyResume.Domain.Models.DataContexts;
 using MyResume.Domain.Models.Entities;
+using MyResume.Domain.Models.ViewModels;
+using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MyResume.WebUI.Controllers
@@ -31,9 +38,17 @@ namespace MyResume.WebUI.Controllers
             return View();
         }
 
-        public IActionResult Portfolio()
+        public async Task<IActionResult> Portfolio(PortfolioViewModel model)
         {
-            return View();
+            var projectCategories = await db.ProjectCategories.Where(pc => pc.DeletedDate == null).ToListAsync();
+
+            var projects = await db.Projects.Where(c => c.DeletedDate == null).ToListAsync();
+
+            return View(new PortfolioViewModel
+            {
+                ProjectCategories = projectCategories,
+                Projects = projects
+            });
         }
 
         public IActionResult Contact()
@@ -65,6 +80,27 @@ namespace MyResume.WebUI.Controllers
             };
 
             return Json(responseError);
+        }
+
+        public IActionResult Pdf()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Export(string GridHtml)
+        {
+
+            using (MemoryStream stream = new System.IO.MemoryStream())
+            {
+                StringReader sr = new StringReader(GridHtml);
+                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 100f, 0f);
+                PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                pdfDoc.Close();
+                return File(stream.ToArray(), "application/pdf", "Grid.pdf");
+            }
         }
     }
 }

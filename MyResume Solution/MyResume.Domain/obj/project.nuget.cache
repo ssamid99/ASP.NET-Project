@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7x4HZ+D9hiCjwGPYOMI7rzOrvy6Jc8a0UljP6Zi3rdpJ3XciFcGmIJmDHAX0EN8f2GMKXGgXbeHep6C76CxhUA==",
+  "dgSpecHash": "CmaptKgo+LIQuNthNA6INJxxtsTULEedJumynH8W4TdIamiNi7IzITFhYwtJGj7TaKa4DSGapxzhiM2MrBlLsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj",
+  "projectFilePath": "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\12345\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\12345\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

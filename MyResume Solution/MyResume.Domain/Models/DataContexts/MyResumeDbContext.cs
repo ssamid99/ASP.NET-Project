@@ -29,6 +29,8 @@ namespace MyResume.Domain.Models.DataContexts
         public DbSet<ResumeSkill> ResumeSkills { get; set; }
         public DbSet<ResumeExperience> ResumeExperiences { get; set; }
         public DbSet<ResumeDiploma> ResumeDiplomas { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectCategory> ProjectCategories { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

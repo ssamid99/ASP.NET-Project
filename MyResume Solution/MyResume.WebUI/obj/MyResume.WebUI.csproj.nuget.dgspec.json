@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.WebUI\\MyResume.WebUI.csproj": {}
+    "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.WebUI\\MyResume.WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj": {
+    "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj",
         "projectName": "MyResume.Domain",
-        "projectPath": "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj",
+        "projectPath": "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj",
         "packagesPath": "C:\\Users\\12345\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.Domain\\obj\\",
+        "outputPath": "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -133,14 +133,14 @@
         }
       }
     },
-    "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.WebUI\\MyResume.WebUI.csproj": {
+    "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.WebUI\\MyResume.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.WebUI\\MyResume.WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.WebUI\\MyResume.WebUI.csproj",
         "projectName": "MyResume.WebUI",
-        "projectPath": "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.WebUI\\MyResume.WebUI.csproj",
+        "projectPath": "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.WebUI\\MyResume.WebUI.csproj",
         "packagesPath": "C:\\Users\\12345\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.WebUI\\obj\\",
+        "outputPath": "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -161,8 +161,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj": {
-                "projectPath": "C:\\Users\\12345\\Desktop\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj"
+              "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj": {
+                "projectPath": "C:\\Users\\12345\\Desktop\\ASP.NET-Project\\MyResume Solution\\MyResume.Domain\\MyResume.Domain.csproj"
               }
             }
           }

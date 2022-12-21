@@ -450,6 +450,59 @@ namespace MyResume.Domain.Migrations
                     b.ToTable("UserTokens", "Membership");
                 });
 
+            modelBuilder.Entity("MyResume.Domain.Models.Entities.Project", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Link")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProjectCategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectCategoryId");
+
+                    b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("MyResume.Domain.Models.Entities.ProjectCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProjectCategories");
+                });
+
             modelBuilder.Entity("MyResume.Domain.Models.Entities.ResumeBio", b =>
                 {
                     b.Property<int>("Id")
@@ -709,6 +762,17 @@ namespace MyResume.Domain.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MyResume.Domain.Models.Entities.Project", b =>
+                {
+                    b.HasOne("MyResume.Domain.Models.Entities.ProjectCategory", "ProjectCategory")
+                        .WithMany("Projects")
+                        .HasForeignKey("ProjectCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProjectCategory");
+                });
+
             modelBuilder.Entity("MyResume.Domain.Models.Entities.ResumeSkill", b =>
                 {
                     b.HasOne("MyResume.Domain.Models.Entities.ResumeCategory", "ResumeCategory")
@@ -740,6 +804,11 @@ namespace MyResume.Domain.Migrations
             modelBuilder.Entity("MyResume.Domain.Models.Entities.Membership.MyResumeUser", b =>
                 {
                     b.Navigation("BlogPostComments");
+                });
+
+            modelBuilder.Entity("MyResume.Domain.Models.Entities.ProjectCategory", b =>
+                {
+                    b.Navigation("Projects");
                 });
 
             modelBuilder.Entity("MyResume.Domain.Models.Entities.ResumeCategory", b =>
